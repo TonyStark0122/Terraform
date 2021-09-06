@@ -14,7 +14,7 @@ resource "aws_security_group" "sg-tonyastark" {
       to_port = 443
     } ]
     tags = {
-        CreateDate = data.aws_ip_ranges.us_east_ip_range.create_date
-        SyncToken = data.aws_ip_ranges.us_east_ip_range.sync_token
+        CreateDate = data.aws_ip_ranges.ap_south_ip_range.create_date
+        SyncToken = data.aws_ip_ranges.ap_south_ip_range.sync_token
     }
 }
