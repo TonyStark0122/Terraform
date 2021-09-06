@@ -12,7 +12,7 @@ resource "aws_instance" "web" {
   tags = {
     Name = "${var.INSTANCE_NAME}-${count.index}"
   }
-}
+
 
 provisioner "file" {
   source    = "nginx.sh"
@@ -33,3 +33,4 @@ connection {
     user        = var.INSTANCE_USERNAME
     private_key = file(var.PATH_TO_PRIVATE_KEY)
   }
+}
