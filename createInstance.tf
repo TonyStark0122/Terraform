@@ -16,8 +16,8 @@ resource "aws_instance" "web" {
 
 
 provisioner "file" {
-  source    = "/root/terraform/ex-1/Terraform/nginx.sh"
-  destination = "tmp/nginx.sh"
+  source    = "nginx.sh"
+  destination = "/tmp/nginx.sh"
 }
 
 provisioner "remote-exec" {
