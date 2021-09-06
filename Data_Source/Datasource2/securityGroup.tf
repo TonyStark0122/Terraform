@@ -10,7 +10,7 @@ resource "aws_security_group" "sg-custom_tony" {
         from_port = "443"
         to_port = "443"
         protocol = "tcp"
-        cidr_blocks = slice(data.aws_ip_ranges.ap_ip_range.cidr_blocks, 0, 50)
+        cidr_blocks = slice(data.aws_ip_ranges.ap_ip_range.cidr_blocks, 0, 10)
     }
 
     tags = {
