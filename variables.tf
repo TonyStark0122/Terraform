@@ -1,5 +1,5 @@
 variable "INSTANCE_NAME" {
-    default = "TonyStark"
+    default = "Stark"
     }
 variable "AMI_ID" {
     type = map
@@ -10,4 +10,16 @@ variable "AMI_ID" {
     }
 variable "AWS_REGION" {
     default = "ap-south-1"
+}
+
+variable "PATH_TO_PRIVATE_KEY" {
+    default = "tony"
+}
+
+variable "PATH_TO_PUBLIC_KEY" {
+    default = "tony.pub"
+}
+
+variable "INSTANCE_USERNAME" {
+    default = "ubuntu"
 }
