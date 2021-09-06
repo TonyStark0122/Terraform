@@ -18,4 +18,3 @@ resource "aws_security_group" "sg-tonyastark" {
         SyncToken = data.aws_ip_ranges.us_east_ip_range.sync_token
     }
 }
-}
