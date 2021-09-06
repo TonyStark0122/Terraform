@@ -16,7 +16,7 @@ resource "aws_instance" "web" {
 
 
 provisioner "file" {
-  source    = "nginx.sh"
+  source    = "/root/terraform/ex-1/Terraform/nginx.sh"
   destination = "tmp/nginx.sh"
 }
 
@@ -35,3 +35,4 @@ connection {
     private_key = file(var.PATH_TO_PRIVATE_KEY)
   }
 }
+
