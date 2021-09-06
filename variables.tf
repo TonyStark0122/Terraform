@@ -10,7 +10,7 @@ variable "AMI_ID" {
     }
 variable "Security_Group"{
     type = list
-    default = ["sg-00dafbc555c781a7a", "Jenkins"]
+    default = ["Jenkins"]
 }
 variable "AWS_REGION" {
     default = "ap-south-1"
