@@ -8,6 +8,7 @@ resource "aws_instance" "web" {
   ami           = lookup (var.AMI_ID, var.AWS_REGION)
   instance_type = "t2.micro"
   key_name      = aws_key_pair.tony.key_name
+  security_groups = var.Security_Group
 
   tags = {
     Name = "${var.INSTANCE_NAME}-${count.index}"

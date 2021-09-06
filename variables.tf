@@ -8,6 +8,10 @@ variable "AMI_ID" {
         us-east-1  = "ami-0fa1a201fb8c369dd"
     }
     }
+variable "Security_Group"{
+    type = list
+    default = ["sg-00dafbc555c781a7a", "sg-13008269"]
+}
 variable "AWS_REGION" {
     default = "ap-south-1"
 }
