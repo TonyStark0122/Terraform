@@ -22,7 +22,7 @@ provisioner "file" {
 
 provisioner "remote-exec" {
   inline = [
-      "chmod +x /tmp/nginx.sh",
+      "sudo chmod +x /tmp/nginx.sh",
       "sudo sed -i -e 's/\r$//' /tmp/nginx.sh",  # Remove the spurious CR characters.
       "sudo /tmp/nginx.sh",
   ]
