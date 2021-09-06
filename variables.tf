@@ -1,5 +1,5 @@
 variable "INSTANCE_NAME" {
-   default = "TonyStark"
+    default = "TonyStark"
     }
 variable "AMI_ID" {
     default = "ami-0c1a7f89451184c8b"
