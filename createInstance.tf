@@ -20,6 +20,6 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "'var.INSTANCE_NAME'-${count.index}"
+    Name = "var.INSTANCE_NAME${count.index}"
   }
 }
