@@ -4,7 +4,7 @@ resource "aws_key_pair" "tony" {
 }
 
 resource "aws_instance" "web" {
-  count         = 3
+  count         = 2
   ami           = lookup (var.AMI_ID, var.AWS_REGION)
   instance_type = "t2.micro"
   key_name      = aws_key_pair.tony.key_name
