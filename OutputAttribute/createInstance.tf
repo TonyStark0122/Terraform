@@ -16,19 +16,19 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "tony" {
-  count         = 2
+  count         = 1
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
-    Name = "PepperPotts-${count.index}"
+    Name = "PepperPotts"
   }
   provisioner "local-exec" {
-    command = "echo The pub.ip of the created instance is ${aws_instance.tony.count.index.public_ip} >> pub_ips.txt"
+    command = "echo The pub.ip of the created instance is ${aws_instance.tony.public_ip} >> pub_ips.txt"
   }
   provisioner "local-exec" {
-    command = "echo The pvt.ip of the created instance is ${aws_instance.tony.count.index.private_ip} >> pri_ips.txt"
+    command = "echo The pvt.ip of the created instance is ${aws_instance.tony.private_ip} >> pri_ips.txt"
   }
 }
   output "pubIP" {
