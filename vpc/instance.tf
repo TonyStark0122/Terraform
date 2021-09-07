@@ -27,4 +27,19 @@ resource "aws_instance" "pepper" {
   tags = {
     Name = "pepper"
   }
+  provisioner "file" {
+      source = "apache.sh"
+      destination = "/tmp/apache.sh"
+      
+  }
+  provisioner "remote-exec" {
+  inline = [
+      "sudo chmod +x /tmp/apache.sh",
+      "sudo sed -i -e 's/\r$//' /tmp/apache.sh",  # Remove the spurious CR characters.
+      "sudo /tmp/apache.sh",
+  ]
+}
+}
+output "ips" {
+    value = aws_instance.pepper.public_ip
 }
