@@ -15,7 +15,7 @@ resource "aws_instance" "tony" {
 
 
 user_data = file("nginx.sh")
-
+}
 output "ip" {
-  value = aws_instance.tony
+  value = aws_instance.tony.public_ip
 }
