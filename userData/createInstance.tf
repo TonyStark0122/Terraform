@@ -14,7 +14,7 @@ resource "aws_instance" "tony" {
   }
 
 
-user_data = file("nginx.sh")
+user_data = data.template_cloudinit_config.apache_cinfig.rendered
 }
 output "ip" {
   value = aws_instance.tony.public_ip
