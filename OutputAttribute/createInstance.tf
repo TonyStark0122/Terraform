@@ -26,8 +26,9 @@ resource "aws_instance" "tony" {
   }
   provisioner "local-exec" {
     command = "echo The pub.ip of the created instance is ${aws_instance.tony.public_ip} >> pub_ips.txt"
+  }
+  provisioner "local_exec" {
     command = "echo The pvt.ip of the created instance is ${aws_instance.tony.private_ip} >> pri_ips.txt"
-
   }
 }
   output "pubIP" {
